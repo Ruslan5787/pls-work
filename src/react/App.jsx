@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import ContentTop from "./react/components/content/ContentTop";
-import ContentBottom from "./react/components/content/ContentBottom";
+import ContentTop from "./components//content/ContentTop";
+import ContentBottom from "./components/content/ContentBottom";
 
-export function App() {
+function App() {
   const [getCityInfo, setGetCityInfo] = useState();
 
   function updateData(handleSubmit) {
@@ -22,3 +22,5 @@ export function App() {
     </div>
   )
 }
+
+export default App

@@ -1,14 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { applyMiddleware, createStore, combineReducers } from "redux";
-import thunk from "redux-thunk";
 import { Provider } from 'react-redux';
-
-import { ACTIONS_TYPES } from "./react/actionsType";
-import {App} from './App'
-import "./css/reset.css"
-import "./css/style.css"
+import thunk from "redux-thunk";
+import { ACTIONS_TYPES } from "./actionsType";
+import App from './App'
 
 const defaultState = {
   cityInfo: '',
@@ -59,10 +55,9 @@ const rootReducer = combineReducers({
 
 const store = createStore(rootReducer, applyMiddleware(thunk))
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <Provider store={store}>
     <App />
-  </Provider>
-);
+  </Provider>,
+  root
+)
