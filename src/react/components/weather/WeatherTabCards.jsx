@@ -6,7 +6,7 @@ import Card from "./WeatherCard";
 
 function WeatherTabCards() {
   const tabsToggleFlag = useContext(TabsToggleFlagContext)
-  const cityCards = useSelector(state => state.getCityInfo.cityCards)
+  const cityCards = useSelector(state => state.cityCards)
   const active = parseFloat(cityCards?.cod) === 200
   const cityName = cityCards?.city?.name
   const cards = []

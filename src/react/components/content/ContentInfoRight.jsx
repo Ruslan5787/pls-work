@@ -3,14 +3,14 @@ import FavoriteCity from "./FavoriteCity";
 
 function ContentInfoRight({ getCityInfo }) {
   const cities = []
-  const favoriteCities = useSelector(state => state.favoriteCities.favoriteCities)
+  const favoriteCities = useSelector(state => state.favoriteCities)
 
   if (favoriteCities) {
     favoriteCities.forEach(city => {
       cities.push(
         <FavoriteCity
           cityName={city}
-          key={city}
+          key={Math.random()}
           getCityInfo={getCityInfo}
         />
       )

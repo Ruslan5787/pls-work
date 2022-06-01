@@ -6,8 +6,7 @@ import { getStyleClass, getContent } from "../../helpers.js";
 
 function WeatherTabDetails() {
   const tabsToggleFlag = useContext(TabsToggleFlagContext)
-  const cityInfo = useSelector(state => state.getCityInfo.cityInfo)
-
+  const cityInfo = useSelector(state => state.cityInfo)
   const active = cityInfo?.cod === 200
   const cityName = cityInfo?.name
   const temp = cityInfo?.main?.temp
@@ -16,7 +15,6 @@ function WeatherTabDetails() {
   const sunrise = cityInfo?.sys?.sunrise
   const sunset = cityInfo?.sys?.sunset
 
-  console.log();
   return (
     <div className={getStyleClass('details', tabsToggleFlag, true)}>
       <div className={active ? "weather__tab-wrapper active" : "weather__tab-wrapper"}>
@@ -34,5 +32,3 @@ function WeatherTabDetails() {
 }
 
 export default WeatherTabDetails
-
-console.log();

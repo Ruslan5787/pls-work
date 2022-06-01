@@ -7,12 +7,11 @@ import { getStyleClass, getContent, getUrlPictureWeather } from "../../helpers.j
 function WeatherTabMain() {
   const dispatch = useDispatch()
   const tabsToggleFlag = useContext(TabsToggleFlagContext)
-  const cityInfo = useSelector(state => state.getCityInfo.cityInfo)
+  const cityInfo = useSelector(state => state.cityInfo)
   const active = cityInfo?.cod === 200
   const temp = cityInfo?.main?.temp
   const icon = cityInfo?.weather?.[0]?.icon
   const cityName = cityInfo?.name
-
 
   function updateFavoriteCity(cityName) {
     dispatch({ type: ACTIONS_TYPES.FAVORITE_CITIES, favoriteCity: cityName })
@@ -23,8 +22,8 @@ function WeatherTabMain() {
       <div className={active ? "weather__tab-wrapper active" : "weather__tab-wrapper"} >
         <div className="weather__tab--first">
           <div className="weather__tab-degrees">{getContent(temp, Math.round)}°</div>
-          <div className="weather__tab-img">
-            <img src={getContent(icon, getUrlPictureWeather)} />
+          <div className="weather__tab-img">  
+            <img src={getContent(icon, getUrlPictureWeather)} alt="" />
           </div>
           <div className="weather__tab-bottom tab-bottom">
             <div className="tab__name">{getContent(cityName)}</div>
